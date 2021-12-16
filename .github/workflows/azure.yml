@@ -23,10 +23,5 @@ jobs:
     - name: HtnlExtra
       run: npm install -g newman-reporter-htmlextra
     - name: 'Executa newman com htmlextra'
-      run: newman run marvel.json -e Herois.json -r --reporter-htmlextra-export ./results/report.html
-    - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v2.3.1
-      with:
-       name: report
-       path: report.html 
+      run: newman run marvel.json -e Herois.json -r --reporter-htmlextra-export .github/workflows/report.html
       
