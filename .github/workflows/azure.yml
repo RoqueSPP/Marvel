@@ -17,14 +17,12 @@ jobs:
     - name: Use Node.js ${{ env.NODE_VERSION }}
       uses: actions/setup-node@v2
       with:
-        node-version: ${{ env.NODE_VERSION }}
-    - name: Install dependencies
-      run: npm install
+       node-version: ${{ env.NODE_VERSION }}
     - name: npm install, build, and test
       run: npm install newman
     - name: HtnlExtra
       run: npm install -g newman-reporter-htmlextra
     - name: 'Executa newman com htmlextra'
-      run: newman run marvel.json -e Herois.json -r htmlextra --reporter-htmlextra-export ./results/report.html   
+      run: newman run marvel.json -e Herois.json -r --reporter-htmlextra-export ./results/report.html   
       
       
