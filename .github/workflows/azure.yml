@@ -24,8 +24,9 @@ jobs:
       run: npm install -g newman-reporter-htmlextra
     - name: 'Executa newman com htmlextra'
       run: newman run marvel.json -e Herois.json -r --reporter-htmlextra-export  
-    - name: Cache
-      uses: actions/cache@v2.1.7
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.3.1
       with:
+       name: report
        path: ./results/report.html 
       
