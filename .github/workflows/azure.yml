@@ -23,5 +23,5 @@ jobs:
     - name: HtnlExtra
       run: npm install -g newman-reporter-htmlextra
     - name: 'Executa newman com htmlextra'
-      run: newman run marvel.json -e Herois.json -r -htmlextra-export .github/workflows/report.html
+      run: newman run marvel.json -e Herois.json -r -htmlextra
       
