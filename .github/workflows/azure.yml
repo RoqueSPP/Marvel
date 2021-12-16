@@ -25,7 +25,7 @@ jobs:
     - name: 'Executa newman com htmlextra'
       run: newman run marvel.json -e Herois.json -r htmlextra --reporter-htmlextra-export ./results/report.html 
     - name: push
-      run: git psuh
+      run: git push
       
       
       
