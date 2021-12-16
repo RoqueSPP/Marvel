@@ -1,4 +1,4 @@
-a 
+
 on:
   push:
     branches:
@@ -27,5 +27,5 @@ jobs:
     - uses: actions/checkout@v2
       with:
        name: Report
-       path: Marvel
+       path: Marvel/
     
