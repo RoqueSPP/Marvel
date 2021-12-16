@@ -1,0 +1,27 @@
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  NODE_VERSION: '10.x'                # set this to the node version to use
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ env.NODE_VERSION }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+    - name: npm install, build, and test
+      run: npm install newman
+    - name: HtnlExtra
+      run: npm install -g newman-reporter-htmlextra
+    
+    - name: 'Deploy to Azure WebApp'
+      run: newman run marvel.json -e Herois.json -r htmlextra
