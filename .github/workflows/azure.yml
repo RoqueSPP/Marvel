@@ -18,16 +18,13 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ env.NODE_VERSION }}
+    - name: Install dependencies
+      run: npm install
     - name: npm install, build, and test
       run: npm install newman
     - name: HtnlExtra
       run: npm install -g newman-reporter-htmlextra
     - name: 'Executa newman com htmlextra'
-      run: newman run marvel.json -e Herois.json -r htmlextra --reporter-htmlextra-export ./results/report.html 
-    - name: push
-      run: git add .
-    - name: push
-      run: git push
-      
+      run: newman run marvel.json -e Herois.json -r htmlextra --reporter-htmlextra-export ./results/report.html   
       
       
