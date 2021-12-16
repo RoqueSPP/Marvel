@@ -27,5 +27,5 @@ jobs:
     - uses: actions/checkout@v2
       with:
        name: Repor
-       path: /Marvel
+       path: Marvel/.github/workflows/
     
