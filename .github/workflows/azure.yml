@@ -23,7 +23,7 @@ jobs:
     - name: HtnlExtra
       run: npm install -g newman-reporter-htmlextra
     - name: 'Executa newman com htmlextra'
-      run: newman run marvel.json -e Herois.json -r htmlextra-export
+      run: newman run marvel.json -e Herois.json -r htmlextra
     - uses: actions/checkout@v2
       with:
        name: Report
