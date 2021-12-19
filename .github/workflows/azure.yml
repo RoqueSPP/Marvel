@@ -25,7 +25,7 @@ jobs:
     - name: executar
       run: newman run marvel.json -e Herois.json -r htmlextra --reporter-htmlextra-export testResults/htmlreport.html --reporter-htmlextra
     - name: diretorio
-      run: mkdir -p testResults
+      run: mkdir testResults
     - name: Output the run Details
       uses: actions/upload-artifact@v2
       with: 
