@@ -25,6 +25,7 @@ jobs:
     - name: 'Executa newman com htmlextra'
       run: newman run marvel.json -e Herois.json -reporters cli,htmlextra --reporter-htmlextra-export
     - name: Download a Build Artifac
+      uses: actions/-r htmlextra --reporter-htmlextra@1
       with:
        name: path
        paths: workflows/report.html
