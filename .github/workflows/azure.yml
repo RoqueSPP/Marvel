@@ -24,10 +24,9 @@ jobs:
       run: npm install -g newman-reporter-htmlextra
     - name: 'Executa newman com htmlextra'
       run: newman run marvel.json -e Herois.json -reporters cli,htmlextra --reporter-htmlextra-export
-    - name: Download a Build Artifact
-      uses: actions/download-artifact@v2.1.0
+    - name: Download a Build Artifac
       with:
        name: path
-       paths: workflows/
+       paths: workflows/report.html
 
       
