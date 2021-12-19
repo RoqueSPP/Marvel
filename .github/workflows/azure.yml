@@ -28,7 +28,6 @@ jobs:
       uses: actions/download-artifact@v2.1.0
       with:
        name: path
-       paths: report.html
-
+       paths: workflows/
 
       
