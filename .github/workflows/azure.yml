@@ -21,15 +21,9 @@ jobs:
     - name: github
       run: npm i github-actions-workflow-builder
     - name: npm install, build, and test
-      run: npm install newman
+      run: npm install -g newman-reporter-html
     - name: HtnlExtra
       run: docker pull dannydainton/htmlextra
     - name: 'Executa newman com htmlextra'
       run: newman run marvel.json -e Herois.json -reporters cli,htmlextra --reporter-htmlextra-export
-    - name: Download a Build Artifac
-      uses: actions/checkout@v2
-      with:
-       name: path
-       paths: workflows/report.html
-
-      
+    
