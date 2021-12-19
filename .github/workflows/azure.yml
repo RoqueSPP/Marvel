@@ -21,7 +21,7 @@ jobs:
     - name: npm install, build, and test
       run: npm install newman
     - name: HtnlExtra
-      run: npm install -g newman-reporter-htmlextra
+      run: docker pull dannydainton/htmlextra
     - name: 'Executa newman com htmlextra'
       run: newman run marvel.json -e Herois.json -reporters cli,htmlextra --reporter-htmlextra-export
     - name: Download a Build Artifac
